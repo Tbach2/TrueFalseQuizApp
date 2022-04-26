@@ -11,11 +11,17 @@
         
         <Button Text="Start" x:Name="Start" Clicked="Start_Clicked"/>
 
+        <Image x:Name="Images" IsVisible="false"/>
+
         <Label x:Name="QuestionResults" HorizontalOptions="Center" FontSize="Large"/>
 
-        <Button Text="True" x:Name="True" Clicked="True_Clicked" IsVisible="False"/>
-        <Button Text="False" x:Name="False" Clicked="False_Clicked" IsVisible="False"/>
-        
+        <BoxView VerticalOptions="FillAndExpand">
+            <BoxView.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Swiped="SwipeLeft"/>
+                <SwipeGestureRecognizer Direction="Right" Swiped="SwipeRight"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
     </StackLayout>
 
 </ContentPage>
